@@ -1,4 +1,6 @@
 __pycache__
 venv/
-learning_resources/
+resources/
+alembic/
+alembic.ini
 .env
