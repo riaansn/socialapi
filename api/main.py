@@ -3,10 +3,20 @@ from . import models
 from .database import engine
 from .routers import user, post, auth, vote
 from .config import settings
-
-# models.Base.metadata.create_all(bind=engine) # only needed if not using alembic
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# models.Base.metadata.create_all(bind=engine) # only needed if not using alembic
+origins = []
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 app.include_router(post.router)
@@ -15,6 +25,6 @@ app.include_router(auth.router)
 app.include_router(vote.router)
 
 
-@app.get("/")
+@ app.get("/")
 async def root():
     return {"message": "This is our api root path welcome..."}
