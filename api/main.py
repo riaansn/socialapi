@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 # models.Base.metadata.create_all(bind=engine) # only needed if not using alembic
-origins = []
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
