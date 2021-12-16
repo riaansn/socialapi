@@ -4,5 +4,6 @@ resources/
 # alembic/
 # alembic.ini
 .env
-docker-compose.yaml
+docker-compose.yml
 Dockerfile
+.vscode
