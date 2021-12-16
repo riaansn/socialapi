@@ -7,7 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# models.Base.metadata.create_all(bind=engine) # only needed if not using alembic
+# only needed if not using alembic
+# models.Base.metadata.create_all(bind=engine)
 origins = ["*"]
 
 app.add_middleware(
@@ -27,4 +28,4 @@ app.include_router(vote.router)
 
 @ app.get("/")
 async def root():
-    return {"message": "This is our api root path welcome..."}
+    return {"message": "This is our api does it show changes as we are coding?..."}

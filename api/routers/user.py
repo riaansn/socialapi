@@ -11,7 +11,7 @@ router = APIRouter(
 )
 
 
-@router.post("/", response_model=schemas.UserResponse)
+@router.post("/", status_code=status.HTTP_201_CREATED, response_model=schemas.UserResponse)
 async def get_users(user: schemas.UserCreate, db: Session = Depends(get_db)):
     try:
         user.password = utils.hashing(user.password)

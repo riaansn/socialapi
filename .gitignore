@@ -4,3 +4,5 @@ resources/
 # alembic/
 # alembic.ini
 .env
+docker-compose.yaml
+Dockerfile
